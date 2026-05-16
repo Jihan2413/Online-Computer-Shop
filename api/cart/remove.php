@@ -1,0 +1,41 @@
+<?php
+// ============================================================
+//  api/cart/remove.php
+//  POST /api/cart/remove
+//  Body: cart_id
+//  Returns JSON with success, message, item_count, total
+// ============================================================
+
+    session_start();
+    header('Content-Type: application/json');
+
+    if (!isset($_SESSION['user_id'])) {
+        echo json_encode([
+            'success'  => false,
+            'message'  => 'Please log in.',
+            'redirect' => '../../views/login.php'
+        ]);
+        exit;
+    }
+
+    require_once(__DIR__ . '/../../models/cartModel.php');
+
+    $userId = (int)$_SESSION['user_id'];
+    $cartId = (int)($_POST['cart_id'] ?? 0);
+
+    if ($cartId < 1) {
+        echo json_encode(['success' => false, 'message' => 'Invalid cart item.']);
+        exit;
+    }
+
+    $result = removeCartItem($cartId, $userId);
+
+    if ($result['success']) {
+        $totals = getCartTotals($userId);
+        $result['item_count'] = $totals['item_count'];
+        $result['total']      = number_format($totals['total'], 2);
+    }
+
+    echo json_encode($result);
+    exit;
+?>
