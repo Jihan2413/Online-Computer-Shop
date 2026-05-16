@@ -1,10 +1,4 @@
 <?php
-// ============================================================
-//  api/cart/remove.php
-//  POST /api/cart/remove
-//  Body: cart_id
-//  Returns JSON with success, message, item_count, total
-// ============================================================
 
     session_start();
     header('Content-Type: application/json');
@@ -18,7 +12,7 @@
         exit;
     }
 
-    require_once(__DIR__ . '/../../models/cartModel.php');
+    require_once('/../../models/cartModel.php');
 
     $userId = (int)$_SESSION['user_id'];
     $cartId = (int)($_POST['cart_id'] ?? 0);

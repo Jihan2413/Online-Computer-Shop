@@ -1,15 +1,8 @@
 <?php
-// ============================================================
-//  api/cart/add.php
-//  POST /api/cart/add
-//  Body: product_id, quantity
-//  Returns JSON with success, message, item_count, total
-// ============================================================
 
     session_start();
     header('Content-Type: application/json');
 
-    // Must be logged in
     if (!isset($_SESSION['user_id'])) {
         echo json_encode([
             'success' => false,
@@ -19,7 +12,7 @@
         exit;
     }
 
-    require_once(__DIR__ . '/../../models/cartModel.php');
+    require_once('/../../models/cartModel.php');
 
     $userId    = (int)$_SESSION['user_id'];
     $productId = (int)($_POST['product_id'] ?? 0);

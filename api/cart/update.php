@@ -1,10 +1,4 @@
 <?php
-// ============================================================
-//  api/cart/update.php
-//  POST /api/cart/update
-//  Body: cart_id, quantity
-//  Returns JSON with success, message, subtotal, item_count, total
-// ============================================================
 
     session_start();
     header('Content-Type: application/json');
@@ -18,7 +12,7 @@
         exit;
     }
 
-    require_once(__DIR__ . '/../../models/cartModel.php');
+    require_once('/../../models/cartModel.php');
 
     $userId   = (int)$_SESSION['user_id'];
     $cartId   = (int)($_POST['cart_id']  ?? 0);
@@ -32,7 +26,6 @@
     $result = updateCartItem($cartId, $userId, $quantity);
 
     if ($result['success']) {
-        // Re-fetch cart to get updated subtotal for this row
         $items = getCartByUser($userId);
         foreach ($items as $item) {
             if ($item['id'] == $cartId) {
