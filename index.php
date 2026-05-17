@@ -31,12 +31,3 @@ if ($page == 'checkout') {
 }
 ?>
 
-</section>
-
-<?php include __DIR__ . '/views/layouts/footer.php'; ?>
-
-<script src="<?= base_url('public/scripts/navbar.js') ?>"></script>
-<script src="<?= base_url('public/scripts/cart.js') ?>"></script>
-</body>
-</html>
->>>>>>> 5cad63106a4a7f0fe2fa3817e0e7089721b91306
