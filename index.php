@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 session_start();
 
 $page = isset($_GET['page']) && $_GET['page'] !== '' ? trim($_GET['page']) : 'home';
