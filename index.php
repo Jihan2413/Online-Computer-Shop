@@ -6,8 +6,6 @@ require_once __DIR__ . '/models/HomeModel.php';
 $homeModel  = new HomeModel($conn);
 $categories = $homeModel->getTopCategories();
 $featured   = $homeModel->getFeaturedProducts();
-
-// Flash messages
 $flashSuccess = $_SESSION['flash_success'] ?? '';
 unset($_SESSION['flash_success']);
 ?>
@@ -31,7 +29,6 @@ unset($_SESSION['flash_success']);
     <div class="flash-success"><?= htmlspecialchars($flashSuccess) ?></div>
 <?php endif; ?>
 
-<!-- ── CATEGORY BAR ─────────────────────────────────────────────────────── -->
 <div class="category-bar">
     <ul>
         <?php foreach ($categories as $cat): ?>
@@ -44,7 +41,6 @@ unset($_SESSION['flash_success']);
     </ul>
 </div>
 
-<!-- ── HERO BANNER ──────────────────────────────────────────────────────── -->
 <section class="banner">
     <p class="banner-subtitle">BEST PRICES. BEST PARTS.</p>
     <h1 class="banner-title">
@@ -54,7 +50,6 @@ unset($_SESSION['flash_success']);
     <a href="<?= base_url('views/category.php') ?>" class="banner-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
 </section>
 
-<!-- ── FEATURED COMPONENTS ──────────────────────────────────────────────── -->
 <section class="featured-section">
     <div class="section-header">
         <div>
@@ -105,7 +100,6 @@ unset($_SESSION['flash_success']);
     </div>
 </section>
 
-<!-- ── PROMO BANNER ──────────────────────────────────────────────────────── -->
 <section class="promo-section">
     <div class="promo-container">
         <div class="promo-text">
