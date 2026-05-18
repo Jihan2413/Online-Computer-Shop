@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../config/database.php";
+require_once "../config/database.php";
 
 $total_products =
 $conn->query("SELECT * FROM products")->num_rows;

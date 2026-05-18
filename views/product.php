@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../config/database.php";
+require_once "../config/database.php";
 
 $categories = $conn->query("SELECT * FROM categories");
 

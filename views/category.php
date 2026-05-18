@@ -1,12 +1,8 @@
 <?php
 session_start();
 
-if($_SESSION['role'] != 'admin'){
-    header("Location: ../../login.php");
-}
-
-require_once "../../config/database.php";
-require_once "../../models/Category.php";
+require_once "../config/database.php";
+require_once "../models/Category.php";
 
 $category = new Category($conn);
 $categories = $category->getAllCategories();

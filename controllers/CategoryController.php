@@ -28,8 +28,6 @@ if(isset($_GET['delete'])){
     header("Location: ../views/category/index.php");
 }
 
-?>
-
 // AJAX DELETE
 if(isset($_POST['action']) && $_POST['action'] == "delete"){
 
@@ -48,4 +46,3 @@ if(isset($_POST['action']) && $_POST['action'] == "delete"){
         ]);
     }
 }
-?>
