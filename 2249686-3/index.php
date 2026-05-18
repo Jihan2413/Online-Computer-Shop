@@ -67,7 +67,7 @@ unset($_SESSION['flash_success']);
                     <a href="<?= base_url('views/product_detail.php?id=' . $product['id']) ?>">
                         <div class="product-img">
                             <?php if ($product['image_path']): ?>
-                                <img src="public/<?= htmlspecialchars($product['image_path']) ?>"
+                                <img src="<?= base_url('public/' . htmlspecialchars($product['image_path'])) ?>"
                                      alt="<?= htmlspecialchars($product['name']) ?>" />
                             <?php else: ?>
                                 <div class="img-placeholder">

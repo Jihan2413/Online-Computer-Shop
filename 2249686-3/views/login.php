@@ -70,7 +70,7 @@ unset($_SESSION['form_errors'], $_SESSION['flash_success']);
         </div>
 
         <button type="submit" name="login">Login</button>
-        <p>Don't have an account? <a href="register.php">Register here</a></p>
+        <p>Don't have an account? <a href="<?= base_url('views/register.php') ?>">Register here</a></p>
     </form>
 </div>
 
