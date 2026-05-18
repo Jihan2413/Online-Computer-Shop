@@ -26,17 +26,3 @@
 
         return $con;
     }
-=======
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "computer_shop";
-
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection Failed");
-}
->>>>>>> 5cad63106a4a7f0fe2fa3817e0e7089721b91306
-
-?>
