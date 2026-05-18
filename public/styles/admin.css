@@ -1,0 +1,17 @@
+.admin-page {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.admin-page h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #111;
+}
+
+.admin-page h2 i {
+    color: #FF3C00;
+    margin-right: 8px;
+}
