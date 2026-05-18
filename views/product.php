@@ -41,7 +41,7 @@ $categories = $conn->query("SELECT * FROM categories");
 <h2>Add Product</h2>
 
 <form
-    action="../../controllers/ProductController.php"
+    action="../controllers/ProductController.php"
     method="POST"
     enctype="multipart/form-data"
 >
