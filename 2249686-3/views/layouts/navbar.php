@@ -4,8 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
-    require_once __DIR__ . '/../../config/db.php';
-    require_once __DIR__ . '/../../models/AuthModel.php';
+    require_once __DIR__ . '/../../../config/db.php';
+    require_once __DIR__ . '/../../../models/AuthModel.php';
     $authModel = new AuthModel($conn);
     $user = $authModel->getUserByRememberToken($_COOKIE['remember_token']);
     if ($user) {
